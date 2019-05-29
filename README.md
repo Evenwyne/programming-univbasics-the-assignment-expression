@@ -131,7 +131,7 @@ evaluated result of the RHS.
 
 Let's do a table again:
 
-|Expession|Action|Notes|
+|Expression|Action|Notes|
 |---------|------|-----|
 |`x = 2 * (y = 3 * 2)`| Evaluate innermost expression in `()`| PEMDAS rules|
 |`y = 3 * 2`|Zoom in to evaluate expression `3 * 2` and assign to y||
@@ -157,7 +157,7 @@ name again and again. What the parent is trying to do is teach the baby to
 assign to the bare word "Mama" or "Papa" or "Dada" _to their face_.
 
 While neither the baby or the (average) adult is aware of it, they're trying to
-teach the baby the second of the _three essential expessions_: the assignment
+teach the baby the second of the _three essential expressions_: the assignment
 expression.
 
 With Ruby, it's much easier. We simply type a bare word, an `=` and an
