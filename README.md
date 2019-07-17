@@ -87,7 +87,7 @@ height_in_centimeters = 180
 
 We can try these out in IRB:
 
-(animation)
+![Variable Asignment](https://curriculum-content.s3.amazonaws.com/prework/mutable_var_assn.gif)
 
 Sometimes, we might want to make a variable name permanent, it can only be
 assigned ONCE. We do this by writing a "symbolic constant." In Ruby, symbolic
