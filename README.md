@@ -105,6 +105,8 @@ SPEED_OF_LIGHT = 1800000
 warning: already initialized constant SPEED_OF_LIGHT
 ```
 
+![Constant Assignment](https://curriculum-content.s3.amazonaws.com/prework/constant_assn.gif)
+
 Actually, our "baby" example is probably:
 
 ```ruby
