@@ -73,7 +73,10 @@ Here, Ruby, by default, doesn't know anything about `maximum_speed`. After
 ## Define Mutability / Immutability
 
 A variable is said to be "mutable." That means the value that the name "points
-to" can be changed during the running of the program.  For example:
+to" can be changed during the running of the program. Being able to change the
+value a variable points to is very important. If we need to do something 10
+times or until the page loads, we need to be able to count how many times
+something happens. Here's "mutability" in action:
 
 Many years ago I was:
 
@@ -101,7 +104,7 @@ written in `ALL_CAPS`.
 SPEED_OF_LIGHT = 180000
 ```
 
-If, after this you try to set `SPEED_OF_LIGHT` to something else, Ruby will
+If, after this, you try to set `SPEED_OF_LIGHT` to something else, Ruby will
 complain.
 
 ```ruby
@@ -111,12 +114,14 @@ warning: already initialized constant SPEED_OF_LIGHT
 
 ![Constant Assignment](https://curriculum-content.s3.amazonaws.com/prework/constant_assn.gif)
 
-Programmers call an assignment to a variable that is immutable, "setting a
-constant." Sometimes we want the programming language to yell at us if we try
-to change the value of certain variables. In real life, changing the value of
-the speed of light would be very bad for existence in this universe. If we had
-a program for doing space travel written in Ruby, we might want it to yell at
-us if we tried to change this constant's value.
+Programmers call an assignment to a variable that is meant to be
+"not-change-able" or immutable, "setting a constant."
+
+Sometimes we want the programming language to yell at us if we try to change
+the value of certain variables. In real life, changing the value of the speed
+of light would be very bad for existence in this universe. If we had a program
+for doing space travel written in Ruby, we might want it to yell at us if we
+tried to change this constant's value.
 
 ## Return Value of an _Assignment Expression_
 
@@ -141,7 +146,7 @@ saying their name over and over (...and over) again.
 
 ![Learning to talk 1](https://curriculum-content.s3.amazonaws.com/programming-univbasics/the-assignment-expression/Image_55_Mama-Baby_1.png)
 
-They wave towards their body and say their name again and again. What the
+They wave towards their bodies and say their names again and again. What the
 parent is trying to do is teach the baby to assign their face to the variable
 name "Mama" or "Dada." But to the baby, this means nothing.
 
