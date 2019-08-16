@@ -21,24 +21,20 @@ that "the variable name 'points to' the expression that was assigned to it."
 Some helpful metaphors here are it's like adding a new entry to a dictionary
 `a_fun_number`'s definition is `3 * (10 -6)` or `my_birth_year` is `1929`.
 
-Figure 1
+![Variable naming as dictionary entry](https://curriculum-content.s3.amazonaws.com/programming-univbasics/the-assignment-expression/Image_87A_VariableNamingMetaphors.png)
 
 Or a variable name is like a label you put on a box:
 
-Figure 2
+![Variable naming as labeled box](https://curriculum-content.s3.amazonaws.com/programming-univbasics/the-assignment-expression/Image_87C_VariableNamingMetaphors.png)
 
 We use the second of our **essential three expressions** to do this: the
 _assignment expression_.
 
 ## Define the _Assignment Expression_
 
-In Ruby, the assignment expression is represented as the following:
+In Ruby, the assignment expression is like so:
 
-```ruby
-name = expression # even the boring old constant expression!
-```
-
-Figure 3
+![Assignment Expression Graphic](https://curriculum-content.s3.amazonaws.com/programming-univbasics/the-assignment-expression/Image_88_AssignmentExpression.png)
 
 Here are some examples:
 
@@ -140,16 +136,24 @@ the right of the `=`.
 
 ## Conclusion
 
-Think about a baby, sitting back. Before it, stands a parent saying their name
-over and over (...and over) again. They wave towards their body and say their
-name again and again. What the parent is trying to do is teach the baby to
-assign their face to the variable name "Mama" or "Dada."
+Think about a baby who has never spoken before.  Before it, stands a parent
+saying their name over and over (...and over) again.
+
+![Learning to talk 1](https://curriculum-content.s3.amazonaws.com/programming-univbasics/the-assignment-expression/Image_55_Mama-Baby_1.png)
+
+They wave towards their body and say their name again and again. What the
+parent is trying to do is teach the baby to assign their face to the variable
+name "Mama" or "Dada." But to the baby, this means nothing.
 
 While neither the baby or the (average) adult is aware of it, they're trying to
 teach the baby the second of the _three essential expressions_: the assignment
-expression.
+expression. Then, one magical day, it clicks for the baby. It performs an
+assignment in its precious little head:
 
-Now that we've learned to assign a variable, or add a new entry to our
-dictionary, or label a box to hold an expression, we want to find out how to
-get the evaluated expression _back out_. That is the goal of our last
-_essential expression_: the variable lookup expression!
+![Learning to talk 2](https://curriculum-content.s3.amazonaws.com/programming-univbasics/the-assignment-expression/Image_55_Mama-Baby_2.png)
+
+Unfortunately, Mom is still sad, she doesn't have any _proof_ that the
+assignment was successful. For that to work, the baby will need to prove that
+it can "look up" the variable assignment of who "ma-ma" points to. We'll need
+to teach Ruby, and baby will need to learn the last of our _essential
+expressions_: the variable lookup expression!
