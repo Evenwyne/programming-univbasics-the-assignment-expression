@@ -12,66 +12,71 @@
 So you've seen the first of our **essential three expressions**, the _constant
 expression_ which gives Ruby some constant fact about the world: `2` is `2`.
 
-It's really useful (we'll see why in a minute) to associate an _expression's_
-_evaluated_ result (or, _return value_)  with a 'name'. We call those names
-that we associate with the _expression's_ result, _variables_.
+It's really useful to associate an _expression's_ _evaluated_ result with a
+'name'. We call those names that we associate with the _expression's_ result,
+_variable names_ or, commonly, just _variables_. The process of bonding an
+expression to a variable is called _assigning a variable_. Programmers also say
+that "the variable name 'points to' the expression that was assigned to it."
+
+Some helpful metaphors here are it's like adding a new entry to a dictionary
+`a_fun_number`'s definition is `3 * (10 -6)` or `my_birth_year` is `1929`.
+
+![Variable naming as dictionary entry](https://curriculum-content.s3.amazonaws.com/programming-univbasics/the-assignment-expression/Image_87A_VariableNamingMetaphors.png)
+
+Or a variable name is like a label you put on a box:
+
+![Variable naming as labeled box](https://curriculum-content.s3.amazonaws.com/programming-univbasics/the-assignment-expression/Image_87C_VariableNamingMetaphors.png)
 
 We use the second of our **essential three expressions** to do this: the
-_assignment expression_.  Other programming books and guides call using the
-assignment expression "assigning a variable."
-
-In terms of conversation, learning the _assignment expression_ is what babies
-are demonstrating when they perform the miracle of ***LEARNING TO TALK***.
-
-Let's dig into this amazing mystery of existence.
+_assignment expression_.
 
 ## Define the _Assignment Expression_
 
-In Ruby, the assignment expression is represented as the following:
+In Ruby, the assignment expression is like so:
+
+![Assignment Expression Graphic](https://curriculum-content.s3.amazonaws.com/programming-univbasics/the-assignment-expression/Image_88_AssignmentExpression.png)
+
+Here are some examples:
 
 ```ruby
-lhs = rhs
+a_fun_number = 3 * (10 - 4)
+my_birth_year = 1929
 ```
 
-We have a name, which we call `lhs` for "left-hand side."; an `=` sign which is
-the _assignment operator_; and then an expression or a constant, which we call
-`rhs` for "right-hand side."
+Variables names are most often lower case descriptions of what their assigned
+expressions _mean_. When the words need to be separated we use `_` to act like
+a "space". While you _can include_ some numbers and symbols as variable names,
+let's keep things simple for the moment and just use lower-case letters and
+`_`.
 
-Here's an example:
+When we define a variable using the "assignment expression" we add
+something new to Ruby itself.
+
+Consider this IRB conversation:
 
 ```ruby
-height_in_centimeters = 180
+irb(main):001:0> maximum_speed
+NameError (undefined local variable or method `maximum_speed' for main:Object)
+irb(main):002:0> maximum_speed = 55
+=> 55
 ```
 
-The left-hand side is a name. Often, programmers call it the "variable name."
-The "LHS" **can never** be an expression. It is called a "bare word." Bare
-words (also: "barewords") are not data like `180`, nor are they expressions
-like `1 + 1`, nor are they words that are special to Ruby. They're words that
-***we*** introduce. For Ruby, `height_in_centimeters` is a bare word. For a
-human baby, `Ma-Ma` is a bare word.
+Here, Ruby, by default, doesn't know anything about `maximum_speed`. After
+"defining the variable `maximum_speed`, it did.
 
-These bare word names are made to "point" to the RHS. This operator is known as
-the _assignment operator_. The _assignment operator_ should not be confused
-with `=` which we know from daily life and arithmetic which means "is equal
-to."
-
-> **ASIDE**: Some programming language authors find "`=` means assignment" to
-> be very confusing.  The Go programming language from Google uses `:=` to mean
-> assignment as does the Pascal programming language.
-
-The RHS should be an _expression_, even if it's our friend the lowly _constant
-expression_. To associate this to learning to speak:
-
-```text
-ma-ma = <this person in front of me>
-```
-
-That's the basics of the assignment expression!
+> ***SUPER-IMPORTANT***: In the assignment expression `=` means "assignment" it
+> does not mean "what's on the left of the `=` is equal to what's on the left."
+> In math courses, we use `=` to say that the expressions on either side of the
+> `=` are the same. Ruby uses `==` for _that_ purpose. It's very confusing for
+> beginners to have bugs where they confuse `=` for `==`.
 
 ## Define Mutability / Immutability
 
-A variable is said to be mutable. We can apply multiple assignment expressions
-to it.
+A variable is said to be "mutable." That means the value that the name "points
+to" can be changed during the running of the program. Being able to change the
+value a variable points to is very important. If we need to do something 10
+times or until the page loads, we need to be able to count how many times
+something happens. Here's "mutability" in action:
 
 Many years ago I was:
 
@@ -89,15 +94,17 @@ We can try these out in IRB:
 
 ![Variable Asignment](https://curriculum-content.s3.amazonaws.com/prework/mutable_var_assn.gif)
 
-Sometimes, we might want to make a variable name permanent, it can only be
-assigned ONCE. We do this by writing a "symbolic constant." In Ruby, symbolic
-constants are written in all caps:
+Sometimes, we might want to make a variable name permanent. We might want to
+say "hey, this value should not change." We want to say that the value is
+_immutable_, the opposite of _mutable_. We do this by writing a "constant." In
+Ruby, constants are assigned just like variables, **except** their names are
+written in `ALL_CAPS`.
 
 ```ruby
 SPEED_OF_LIGHT = 180000
 ```
 
-If, after this you try to set `SPEED_OF_LIGHT` to something else, Ruby will
+If, after this, you try to set `SPEED_OF_LIGHT` to something else, Ruby will
 complain.
 
 ```ruby
@@ -107,67 +114,51 @@ warning: already initialized constant SPEED_OF_LIGHT
 
 ![Constant Assignment](https://curriculum-content.s3.amazonaws.com/prework/constant_assn.gif)
 
-Actually, our "baby" example is probably:
+Programmers call an assignment to a variable that is meant to be
+"not-change-able" or immutable, "setting a constant."
 
-```ruby
-# MA_MA is probably a constant, that doesn't change during a lifetime
-MA_MA = <the lady that gave me life who is gesturing in front of me>
-```
-
-## Constant versus "Symbolic Constants" and "Values"
-
-We need to clear up some vocabulary.
-
-We've been calling `23` and `255` _constants_, because that's what the
-definition of _expression_ called them. And this is absolutely true and
-correct.
-
-**But** programmers have come to say, "constant" is short for "symbolic
-constant" &mdash; like we just learned. What _we_ have been calling _constants_
-many programmers call "values" or "scalar values."
+Sometimes we want the programming language to yell at us if we try to change
+the value of certain variables. In real life, changing the value of the speed
+of light would be very bad for existence in this universe. If we had a program
+for doing space travel written in Ruby, we might want it to yell at us if we
+tried to change this constant's value.
 
 ## Return Value of an _Assignment Expression_
 
 It's interesting, but the return value of an _assignment expression_ is the
-evaluated result of the RHS.
+evaluated result of the expression to the right of the `=`.
 
-Let's do a table again:
+```ruby
+recurring_expression_value = 3 * (10 - 6)
+=> 18
+```
 
-|Expression|Action|Notes|
-|---------|------|-----|
-|`x = 2 * (y = 3 * 2)`| Evaluate innermost expression in `()`| PEMDAS rules|
-|`y = 3 * 2`|Zoom in to evaluate expression `3 * 2` and assign to y||
-|`y = 6`| Assignment expression taking a constant expression to assign| y now points to `6`|
-|6|Return value of `y = 6`|Remember: Assignment expressions have a return value; insert in outer expression|
-|x = 2 * 6 |Evaluate expression|PEMDAS rules|
-|x = 12| A bare word and a constant| `x` now points to `12` |
-
-That first line is a little bit tricky. You might be thinking "Hey, that's not
-math!" You're right. This is evaluating expressions in Ruby, so things are a
-bit more interesting.
-
-> **FURTHER GROWTH**: When you learn the _variable lookup expression_ in two
-> lessons, come back to this lesson and use the _variable lookup expression_ to
-> see what's inside `x` and `y` after Ruby evaluates the expression:
-`x = 2 * (y = 3 * 2)`.
+Pay attention here, the return value of the assignment expression ***IS NOT THE
+SAME THING*** as getting the value out of the variable name. We'll learn to get
+the variable "back out of a variable" in the next lesson. What Ruby's saying is
+that the assignment expression's return value is the value of the expression to
+the right of the `=`.
 
 ## Conclusion
 
-Think about a baby, sitting back. Before it stands a parent saying their name
-over and over (...and over) again. They wave towards their body and say their
-name again and again. What the parent is trying to do is teach the baby to
-assign to the bare word "Mama" or "Papa" or "Dada" _to their face_.
+Think about a baby who has never spoken before.  Before it, stands a parent
+saying their name over and over (...and over) again.
+
+![Learning to talk 1](https://curriculum-content.s3.amazonaws.com/programming-univbasics/the-assignment-expression/Image_55_Mama-Baby_1.png)
+
+They wave towards their bodies and say their names again and again. What the
+parent is trying to do is teach the baby to assign their face to the variable
+name "Mama" or "Dada." But to the baby, this means nothing.
 
 While neither the baby or the (average) adult is aware of it, they're trying to
 teach the baby the second of the _three essential expressions_: the assignment
-expression.
+expression. Then, one magical day, it clicks for the baby. It performs an
+assignment in its precious little head:
 
-With Ruby, it's much easier. We simply type a bare word, an `=` and an
-expression.
+![Learning to talk 2](https://curriculum-content.s3.amazonaws.com/programming-univbasics/the-assignment-expression/Image_55_Mama-Baby_2.png)
 
-Since we now now how to get a constant for the purpose of assigning (_constant
-expression_) and we know how to assign it (_assignment expression_) we have
-only one more vital expression to learn of the _essential three_: the variable
-lookup expression!
-
-
+Unfortunately, Mom is still sad, she doesn't have any _proof_ that the
+assignment was successful. For that to work, the baby will need to prove that
+it can "look up" the variable assignment of who "ma-ma" points to. We'll need
+to teach Ruby, and baby will need to learn the last of our _essential
+expressions_: the variable lookup expression!
