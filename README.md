@@ -19,7 +19,7 @@ expression to a variable is called _assigning a variable_. Programmers also say
 that "the variable name 'points to' the expression that was assigned to it."
 
 Some helpful metaphors here are it's like adding a new entry to a dictionary
-`a_fun_number`'s definition is `3 * (10 -6)` or `my_birth_year` is `1929`.
+`a_fun_number`'s definition is `3 * (10 - 4)` or `my_birth_year` is `1929`.
 
 ![Variable naming as dictionary entry](https://curriculum-content.s3.amazonaws.com/programming-univbasics/the-assignment-expression/Image_87A_VariableNamingMetaphors.png)
 
@@ -129,7 +129,7 @@ It's interesting, but the return value of an _assignment expression_ is the
 evaluated result of the expression to the right of the `=`.
 
 ```ruby
-recurring_expression_value = 3 * (10 - 6)
+recurring_expression_value = 3 * (10 - 4)
 => 18
 ```
 
